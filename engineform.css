@@ -1,0 +1,91 @@
+body {
+    background-color: rgba(220, 235, 255, 0.95);
+}
+
+.container {
+    background-color: rgba(71, 161, 250, 0.9);
+    width: 450px;
+    margin: 50px auto 40px auto; /* Added margin-bottom for space after the form */
+    border-radius: 10px;
+    padding: 2%;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 40px; /* Increased vertical space after the heading */
+}
+
+.row {
+    display: grid;
+    font-weight: bold;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.row textarea {
+    grid-column: span 2;
+}
+
+input,
+select {
+    width: 210px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+input[type="file"] {
+    border: 2px solid rgba(245, 245, 245, 0.4);
+    border-radius: 5px;
+}
+
+/* Button Row Styling */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-row button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0066cc;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.6s ease;
+}
+
+.button-row a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.button-row button:hover {
+    transform: scale3d(1.2, 1.2, 1.2);
+    box-shadow: 1px 4px 8px 1px rgba(0.2, 0.2, 0.2, 0.2);
+    background-color: rgb(2, 3, 103);
+}
+
+/* ===== Added Code Below ===== */
+
+/* Flex wrapper for the form and image */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 40px;
+}
+

@@ -1,0 +1,223 @@
+body {
+    background-color: #fff8f3;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .main-header {
+    background-color: #3eaaa0;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo img {
+    width: 250px;
+    height: 70px;
+    overflow: hidden;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    font-size: large;
+    margin-left: 35%;
+  }
+  
+  .nav-links a {
+    color: #212121;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.7s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+  }
+  
+  #background {
+    display: inline-block;
+    background: #095c5f;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #background a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 1s
+  }
+  
+  #background:hover {
+    background-color: #0c6f72;
+    transform: scale(1.2);
+  }
+  
+  #background:hover a {
+    color: #ffffff;
+  }
+  
+  
+  /* Full background section */
+  .tech-content-bg {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    padding: 40px 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .tech-content-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("images/marketing.jpg") center center/cover no-repeat;
+    opacity: 0.25;
+    z-index: 1;
+  }
+  
+  .overlay-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+  }
+  
+  /* Hero Section */
+  .tech-hero {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .tech-hero h1 {
+    font-size: 2.8rem;
+    color: #4b1e00;
+    margin-bottom: 15px;
+  }
+  
+  .tech-hero p {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Cards stacked vertically */
+  .tech-details {
+    max-width: 1000px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  
+  /* What You'll Learn Box */
+  .tech-box {
+    width: 100%;
+    max-width: 900px;
+    background-color: rgba(255, 239, 224, 0.95);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    text-align: center;
+  }
+  
+  .tech-box h2 {
+    font-size: 1.7rem;
+    color: #b35000;
+    margin-bottom: 15px;
+  }
+  
+  .tech-box ul {
+    padding-left: 20px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #444;
+    text-align: left;
+  }
+  
+  /* Company Cards */
+  .tech-company {
+    width: 100%;
+    max-width: 900px;
+    background-color: rgba(255, 211, 168, 0.95);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    text-align: center;
+  }
+  
+  .tech-company h3 {
+    font-size: 1.5rem;
+    color: #4b1e00;
+    margin: 12px 0;
+  }
+  
+  .tech-company p {
+    font-size: 1.05rem;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  .company-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Apply Now Button */
+  .apply-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #cc5500;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .apply-btn:hover {
+    background-color: #a54400;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tech-hero h1 {
+      font-size: 2.2rem;
+    }
+  
+    .tech-hero p {
+      font-size: 1.05rem;
+    }
+  
+    .tech-box,
+    .tech-company {
+      padding: 25px 20px;
+      width: 95%;
+    }
+  }

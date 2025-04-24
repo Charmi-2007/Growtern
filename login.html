@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growtern | Find Your Perfect Internship</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="website icon" type="png" href="icon.png">
+    <link rel="stylesheet" href="login.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <div class="logo">
+                    <h1>Growtern</h1>
+                    <p>Buzz your way to the perfect internship</p>
+                </div>
+
+                <div class="bee-animation">
+                    <i class="fas fa-bee" style="font-size: 50px; color: #FFD700;"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Enter your email" required>
+                    <i class="fas fa-envelope icon"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" class="password" placeholder="Enter your password" required>
+                    <i class="fas fa-lock icon"></i>
+                   
+                </div>
+
+                <div class="checkbox-text">
+                    <div class="checkbox-content">
+                        <input type="checkbox" id="logCheck">
+                        <label for="logCheck" class="text">Remember me</label>
+                    </div>
+                    <a href="#" class="text">Forgot password?</a>
+                </div>
+
+                <div class="input-field button">
+                    <input type="button" value="Login">
+                </div>
+
+                <div class="or-divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-google"></i></a>
+                </div>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link">Signup now</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form signup">
+                <div class="logo">
+                    <h1>Growtern</h1>
+                    <p>Join the hive of opportunities</p>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Enter your name" required>
+                    <i class="fas fa-user icon"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Enter your email" required>
+                    <i class="fas fa-envelope icon"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" class="password" placeholder="Create a password" required>
+                    <i class="fas fa-lock icon"></i>
+                    
+                </div>
+
+                <div class="input-field">
+                    <input type="password" class="password" placeholder="Confirm password" required>
+                    <i class="fas fa-lock icon"></i>
+                   
+                </div>
+
+                <div class="checkbox-text">
+                    <div class="checkbox-content">
+                        <input type="checkbox" id="termCon">
+                        <label for="termCon" class="text">I accept all terms & conditions</label>
+                    </div>
+                </div>
+
+                <div class="input-field button">
+                    <input type="button" value="Signup">
+                </div>
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link">Login now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container"),
+            pwShowHide = document.querySelectorAll(".showHidePw"),
+            pwFields = document.querySelectorAll(".password"),
+            signUp = document.querySelector(".signup-link"),
+            login = document.querySelector(".login-link");
+
+        // Show/hide password and change icon
+        pwShowHide.forEach(eyeIcon => {
+            eyeIcon.addEventListener("click", () => {
+                pwFields.forEach(pwField => {
+                    if (pwField.type === "password") {
+                        pwField.type = "text";
+                        eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
+                    } else {
+                        pwField.type = "password";
+                        eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
+                    }
+                });
+            });
+        });
+
+        // Switch between login and signup forms
+        signUp.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.add("active");
+        });
+
+        login.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.remove("active");
+        });
+
+        // Form validation for login
+        const loginForm = document.querySelector(".login");
+        const loginButton = loginForm.querySelector(".button input");
+
+        loginButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            const email = loginForm.querySelector('input[type="text"]').value;
+            const password = loginForm.querySelector('input[type="password"]').value;
+
+            if (email === "" || password === "") {
+                alert("Please fill in all fields");
+            } else {
+                alert("Login successful! Redirecting...");
+                // Here you would typically send data to server
+                window.location.href = "index.html";
+            }
+        });
+
+        // Form validation for signup
+        const signupForm = document.querySelector(".signup");
+        const signupButton = signupForm.querySelector(".button input");
+
+        signupButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            const name = signupForm.querySelectorAll('input[type="text"]')[0].value;
+            const email = signupForm.querySelectorAll('input[type="text"]')[1].value;
+            const password = signupForm.querySelectorAll('input[type="password"]')[0].value;
+            const confirmPassword = signupForm.querySelectorAll('input[type="password"]')[1].value;
+            const termsChecked = signupForm.querySelector('input[type="checkbox"]').checked;
+
+            if (name === "" || email === "" || password === "" || confirmPassword === "") {
+                alert("Please fill in all fields");
+            } else if (password !== confirmPassword) {
+                alert("Passwords don't match!");
+            } else if (!termsChecked) {
+                alert("Please accept the terms and conditions");
+            } else {
+                alert("Account created successfully! Welcome to InterHive.");
+                // Here you would typically send data to server
+                container.classList.remove("active");
+            }
+        });
+
+        // Add hover effect to buttons
+        const buttons = document.querySelectorAll(".button input");
+        buttons.forEach(button => {
+            button.addEventListener("mouseenter", () => {
+                button.style.transform = "translateY(-2px)";
+                button.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
+            });
+
+            button.addEventListener("mouseleave", () => {
+                button.style.transform = "translateY(0)";
+                button.style.boxShadow = "none";
+            });
+        });
+
+        const forgotPasswordLink = document.querySelector('.form .text[href="#"]');
+
+        forgotPasswordLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            const email = prompt("Please enter your email to reset password:");
+            if (email) {
+                alert(`Password reset link sent to ${email}`);
+                // In a real app, you'd send this to the server
+            } else {
+                alert("Email is required to reset password.");
+            }
+        });
+    </script>
+</body>
+</html>

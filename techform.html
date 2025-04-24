@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>This is my form..</title>
+    <link rel="stylesheet" href="techform.css">
+</head>
+
+<body>
+    <!-- Wrapper for form and image side-by-side -->
+    <div class="main-wrapper">
+        <!-- Application Form -->
+        <div class="container">
+            <h1>Job Application Form</h1>
+            <form>
+
+                <div class="row">
+                    <div>
+                        <label>First Name:</label>
+                        <input type="text" placeholder="Enter your first name" required>
+                    </div>
+                    <div>
+                        <label>Last Name:</label>
+                        <input type="text" placeholder="Enter your last name" required> 
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <label>Email :</label>
+                        <input type="email" placeholder="Enter your email name" required>
+                    </div>
+                    <div>
+                        <label>Company : </label>
+                        <select>
+                            <option value="" disabled selected> Select Company Name </option>
+                            <option>TechNova Solutions</option>
+                            <option>DataNest Analytics</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label>Address : </label>
+                    <textarea placeholder="Enter your address" required></textarea>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <label>City :</label>
+                        <input type="text" placeholder="Enter your city name" required>
+                    </div>
+                    <div>
+                        <label>Pincode :</label>
+                        <input type="text" placeholder="Enter pincode" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <label>Upload your CV :</label>
+                        <input type="file" id="resume" accept=".pdf" required>
+                    </div>
+                </div>
+
+                <!-- Button section -->
+                <div class="button-row">
+                    <button type="button"><a href="technology.html">Back</a></button>
+                    <button type="submit">Apply</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>
